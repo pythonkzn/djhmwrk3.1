@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Каталог{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="header">
+            <h1>Сравнение телефонов</h1>
+        </div>
+        <div class="col s12 m8">
+      <table width="800">
+        <tr>
+                <th>
+                    Модель
+                </th>
+            {% for phone in phones %}
+                <th>
+                    {{ phone.name }} <br>
+                </th>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td>Стоимость</td>
+          {% for phone in phones %}
+            <td>
+              {{ phone.cost }} <br>
+            </td>
+            {% endfor %}
+        </tr>
+          <tr>
+            <td>Операционная система</td>
+          {% for phone in phones %}
+            <td>
+              {{ phone.op_s }} <br>
+            </td>
+            {% endfor %}
+          </tr>
+                    <tr>
+            <td>Бесконтактные платежи</td>
+          {% for phone in phones %}
+            <td>
+              {{ phone.prod.feature_two }} <br>
+            </td>
+            {% endfor %}
+          </tr>
+                        <tr>
+            <td>FM-радио</td>
+          {% for phone in phones %}
+            <td>
+              {{ phone.prod.fm_radio}} <br>
+            </td>
+            {% endfor %}
+          </tr>
+                                  <tr>
+            <td>Дополнительно</td>
+          {% for phone in phones %}
+            <td>
+              {{ phone.prod.feature_one}} <br>
+            </td>
+            {% endfor %}
+          </tr>
+
+
+      </table>
+      </div>
+    </div>
+
+{% endblock %}
